@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import NavBar from "./componentes/NavBar"
 import ItemListContainer from "./containers/ItemListContainer"
 import ItemDetailContainer from "./containers/ItemDetailContainer"
+import Cart from "./componentes/Cart"
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <NavBar titulo="Travel World" />
 
       <Routes>
+
         <Route
           path="/"
           element={<ItemListContainer greeting="¡Bienvenido a nuestra agencia de viajes!" />}
@@ -25,9 +27,15 @@ function App() {
         />
 
         <Route
+          path="/cart"
+          element={<Cart />}
+        />
+
+        <Route
           path="*"
           element={<h2>404 - Página no encontrada</h2>}
         />
+
       </Routes>
     </>
   )
